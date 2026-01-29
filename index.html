@@ -1,221 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Fashion Services</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:Arial, sans-serif;
-background:#0f1111;
-color:#e6e6e6;
-}
-a{text-decoration:none;color:inherit;}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:#131921;
-z-index:1000;
-}
-nav{
-max-width:1200px;
-margin:auto;
-padding:15px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.logo{
-font-size:1.4rem;
-font-weight:bold;
-color:#febd69;
-}
-.nav-links{
-display:flex;
-gap:25px;
-}
-.nav-links a{
-color:#febd69;
-font-weight:500;
-}
-
-.hero{
-margin-top:80px;
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(135deg,#232f3e,#131921);
-}
-.welcome-text{
-color:#febd69;
-font-size:1rem;
-font-weight:bold;
-margin-bottom:10px;
-}
-.hero h1{
-font-size:2.5rem;
-margin-bottom:10px;
-color:#febd69;
-}
-.hero p{color:#ccc;}
-
-section{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
-}
-h2{
-text-align:center;
-margin-bottom:25px;
-color:#febd69;
-}
-
-/* Categories */
-.categories{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-margin-bottom:30px;
-}
-.category{
-background:#1a1a1a;
-padding:10px 22px;
-border-radius:20px;
-font-weight:500;
-color:#febd69;
-}
-
-.products-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-@media(min-width:768px){
-.products-grid{grid-template-columns:repeat(4,1fr);}
-}
-
-.product{
-background:#1a1a1a;
-padding:15px;
-border-radius:10px;
-}
-.product img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:8px;
-margin-bottom:10px;
-}
-.price{
-color:#febd69;
-font-weight:bold;
-margin:8px 0;
-}
-.order-btn{
-display:block;
-text-align:center;
-margin-top:10px;
-background:#25D366;
-padding:8px;
-border-radius:6px;
-font-size:0.9rem;
-}
-
-footer{
-background:#131921;
-text-align:center;
-padding:15px;
-color:#aaa;
-margin-top:40px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Fashion Services</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#0e0e0e;
+      color:#fff;
+    }
+    header{
+      background:#111;
+      padding:15px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header h1{
+      color:#f5a623;
+      font-size:22px;
+      margin:0;
+    }
+    nav a{
+      color:#f5a623;
+      margin-left:15px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .products{
+      display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+      padding:20px;
+    }
+    .card{
+      background:#1a1a1a;
+      border-radius:12px;
+      padding:10px;
+      text-align:center;
+      box-shadow:0 0 10px rgba(0,0,0,0.6);
+    }
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:contain;
+      border-radius:10px;
+      background:#000;
+    }
+    .card h3{
+      font-size:14px;
+      margin:10px 0 5px;
+    }
+    .price{
+      color:#f5a623;
+      font-weight:bold;
+      margin-bottom:10px;
+    }
+    .btn{
+      display:inline-block;
+      background:#1ed760;
+      color:#000;
+      padding:8px 15px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      text-decoration:none;
+      box-shadow:0 0 10px rgba(0,0,0,0.6);
+    }
+    footer{
+      text-align:center;
+      padding:15px;
+      font-size:13px;
+      background:#111;
+      margin-top:20px;
+    }
+  </style>
 </head>
+<body><header>
+  <h1>Smart Fashion Services</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><section id="products" class="products">  <!-- Men -->  <div class="card">
+    <img src="grey-slipon-shoes.jpg" alt="Men Shoes">
+    <h3>Men Sports Shoes</h3>
+    <div class="price">3,999 PKR</div>
+    <a class="btn" href="https://wa.me/923287756032?text=I want to buy Men Sports Shoes">Buy Now</a>
+  </div>  <div class="card">
+    <img src="black-steel-watch.jpg" alt="Watch">
+    <h3>Black Steel Watch</h3>
+    <div class="price">2,699 PKR</div>
+    <a class="btn" href="https://wa.me/923287756032?text=I want to buy Black Steel Watch">Buy Now</a>
+  </div>  <!-- Women -->  <div class="card">
+    <img src="green-embroidered-lawn-3pc-suit.jpg" alt="Women Suit">
+    <h3>Women Lawn 3PC Suit</h3>
+    <div class="price">4,999 PKR</div>
+    <a class="btn" href="https://wa.me/923287756032?text=I want to buy Women Lawn 3PC Suit">Buy Now</a>
+  </div>  <div class="card">
+    <img src="cream-wool-shawl.jpg" alt="Shawl">
+    <h3>Wool Shawl</h3>
+    <div class="price">2,299 PKR</div>
+    <a class="btn" href="https://wa.me/923287756032?text=I want to buy Wool Shawl">Buy Now</a>
+  </div>  <!-- Baby -->  <div class="card">
+    <img src="bag.jpg" alt="Baby Bag">
+    <h3>Baby Carry Bag</h3>
+    <div class="price">1,999 PKR</div>
+    <a class="btn" href="https://wa.me/923287756032?text=I want to buy Baby Carry Bag">Buy Now</a>
+  </div>  <!-- Kitchen -->  <div class="card">
+    <img src="dish-drying-rack.jpg" alt="Kitchen Rack">
+    <h3>Kitchen Dish Holder Rack</h3>
+    <div class="price">6,999 PKR</div>
+    <a class="btn" href="https://wa.me/923287756032?text=I want to buy Kitchen Dish Holder Rack">Buy Now</a>
+  </div></section><a class="whatsapp-float" href="https://wa.me/923287756032">📲</a>
 
-<body>
-
-<header>
-<nav>
-<div class="logo">Smart Fashion Services</div>
-<div class="nav-links">
-<a href="#">Home</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-</header>
-
-<section class="hero">
-<div class="welcome-text">Welcome Dear Customer 👋 We’re Happy to Serve You</div>
-<h1>Shop Smart, Live Better</h1>
-<p>Trusted fashion store with premium quality & best prices</p>
-</section>
-
-<section id="products">
-<h2>Categories</h2>
-
-<div class="categories">
-<div class="category">Kitchen</div>
-<div class="category">Baby</div>
-<div class="category">Men</div>
-<div class="category">Women</div>
-</div>
-
-<h2>Featured Products</h2>
-
-<div class="products-grid">
-
-<div class="product">
-<img src="bag.jpg">
-<h3>Ladies Hand Bag</h3>
-<div class="price">2,999 PKR</div>
-<a class="order-btn">Buy Now</a>
-</div>
-
-<div class="product">
-<img src="green-embroidered-lawn-3pc-suit.jpg">
-<h3>Green Embroidered Lawn Suit</h3>
-<div class="price">5,999 PKR</div>
-<a class="order-btn">Buy Now</a>
-</div>
-
-<div class="product">
-<img src="cream-wool-shawl.jpg">
-<h3>Men Wool Shawl (Cream)</h3>
-<div class="price">2,999 PKR</div>
-<a class="order-btn">Buy Now</a>
-</div>
-
-<div class="product">
-<img src="black-steel-watch.jpg">
-<h3>Men Premium Black Steel Watch</h3>
-<div class="price">2,899 PKR</div>
-<a class="order-btn">Buy Now</a>
-</div>
-
-<div class="product">
-<img src="grey-slipon-shoes.jpg">
-<h3>Men Grey Slip-On Sports Shoes</h3>
-<div class="price">3,999 PKR</div>
-<a class="order-btn">Buy Now</a>
-</div>
-
-<div class="product">
-<img src="dish-drying-rack.jpg">
-<h3>Premium Kitchen Dish Drying Rack</h3>
-<div class="price">6,999 PKR</div>
-<a class="order-btn">Buy Now</a>
-</div>
-
-</div>
-</section>
-
-<footer>
-© 2026 Smart Fashion Services
-</footer>
-
-</body>
+<footer id="contact">
+  © 2026 Smart Fashion Services
+</footer></body>
   </html>
