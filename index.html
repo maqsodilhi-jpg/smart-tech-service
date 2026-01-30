@@ -35,6 +35,7 @@
   <div class="card"><img src="bag.jpg"><h3>Baby Carry Bag</h3><div class="price">1999 PKR</div><a class="btn" onclick="buy('Baby Carry Bag',1999)">Buy Now</a></div>
   <div class="card"><img src="dish-drying-rack.jpg"><h3>Kitchen Dish Holder Rack</h3><div class="price">6999 PKR</div><a class="btn" onclick="buy('Kitchen Dish Holder Rack',6999)">Buy Now</a></div>
 </section><section class="checkout" id="checkout">
+  <a class="btn" style="margin-bottom:10px;background:#444;color:#fff" onclick="backToProducts()">⬅ Back to Products</a>
   <h2>Checkout</h2>
   <input id="name" placeholder="Your Name">
   <input id="phone" placeholder="Phone Number">
@@ -49,9 +50,30 @@
 
 <footer id="contact">© 2026 Smart Fashion Services</footer><script>
 let product='',price=0;
-function buy(p,pr){product=p;price=pr;document.getElementById('checkout').style.display='block';window.scrollTo(0,document.body.scrollHeight);} 
+function buy(p,pr){
+  product = p;
+  price = pr;
+  document.getElementById('products').style.display = 'none';
+  const checkout = document.getElementById('checkout');
+  checkout.style.display = 'block';
+  checkout.scrollIntoView({behavior:'smooth'});
+}
+
+function backToProducts(){
+  document.getElementById('checkout').style.display = 'none';
+  document.getElementById('products').style.display = 'grid';
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+} 
+function backToProducts(){
+  document.getElementById('checkout').style.display='none';
+  document.getElementById('products').style.display='grid';
+  window.scrollTo(0,0);
+}
+
 function placeOrder(){
   let msg=`🛒 *NEW ORDER RECEIVED* 🛒%0A%0A📦 *Product:* ${product}%0A💰 *Price:* ${price} PKR%0A%0A👤 *Customer Name:* ${name.value}%0A📞 *Phone:* ${phone.value}%0A🏠 *Address:* ${address.value}%0A%0A💳 *Payment Method:* ${payment.value}%0A%0A✅ Please confirm this order.`;
+  window.open(`https://wa.me/923287756032?text=${msg}`,'_blank');
+}%0A💰 *Price:* ${price} PKR%0A%0A👤 *Customer Name:* ${name.value}%0A📞 *Phone:* ${phone.value}%0A🏠 *Address:* ${address.value}%0A%0A💳 *Payment Method:* ${payment.value}%0A%0A✅ Please confirm this order.`;
   window.open(`https://wa.me/923287756032?text=${msg}`,'_blank');
 }
 </script></body></html>
