@@ -15,74 +15,74 @@
     .price{color:#f5a623;font-weight:bold;margin-bottom:10px;}
     .btn{display:inline-block;background:#1ed760;color:#000;padding:8px 15px;border-radius:8px;text-decoration:none;font-weight:bold;cursor:pointer;}
     .checkout{padding:20px;display:none;}
-    .checkout input,.checkout select{width:100%;padding:8px;margin:8px 0;border-radius:6px;border:none;}
+    .checkout h2{text-align:center;color:#f5a623;}
+    .checkout input,.checkout select{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:none;}
     .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;width:55px;height:55px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:28px;text-decoration:none;box-shadow:0 0 10px rgba(0,0,0,0.6);}    
     footer{text-align:center;padding:15px;font-size:13px;background:#111;margin-top:20px;}
   </style>
 </head>
-<body>
-<header>
+<body><header>
   <h1>Smart Fashion Services</h1>
   <nav>
     <a href="#">Home</a>
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
   </nav>
-</header>
-
-<section id="products" class="products">
+</header><section id="products" class="products">
   <div class="card"><img src="grey-slipon-shoes.jpg"><h3>Men Sports Shoes</h3><div class="price">3999 PKR</div><a class="btn" onclick="buy('Men Sports Shoes',3999)">Buy Now</a></div>
   <div class="card"><img src="black-steel-watch.jpg"><h3>Black Steel Watch</h3><div class="price">2699 PKR</div><a class="btn" onclick="buy('Black Steel Watch',2699)">Buy Now</a></div>
   <div class="card"><img src="green-embroidered-lawn-3pc-suit.jpg"><h3>Women Lawn 3PC Suit</h3><div class="price">4999 PKR</div><a class="btn" onclick="buy('Women Lawn 3PC Suit',4999)">Buy Now</a></div>
   <div class="card"><img src="cream-wool-shawl.jpg"><h3>Wool Shawl</h3><div class="price">2299 PKR</div><a class="btn" onclick="buy('Wool Shawl',2299)">Buy Now</a></div>
   <div class="card"><img src="bag.jpg"><h3>Baby Carry Bag</h3><div class="price">1999 PKR</div><a class="btn" onclick="buy('Baby Carry Bag',1999)">Buy Now</a></div>
   <div class="card"><img src="dish-drying-rack.jpg"><h3>Kitchen Dish Holder Rack</h3><div class="price">6999 PKR</div><a class="btn" onclick="buy('Kitchen Dish Holder Rack',6999)">Buy Now</a></div>
-</section>
+</section><section class="checkout" id="checkout">
+  <h2>🛒 Checkout</h2>
+  <p id="selectedProduct"></p><a class="btn" style="background:#555;color:#fff;margin-bottom:10px" onclick="backToProducts()">⬅ Back to Products</a>
 
-<section class="checkout" id="checkout">
-  <a class="btn" style="margin-bottom:10px;background:#444;color:#fff" onclick="backToProducts()">⬅ Back to Products</a>
-  <h2>Checkout</h2>
-  <input id="name" placeholder="Your Name">
-  <input id="phone" placeholder="Phone Number">
-  <input id="address" placeholder="Delivery Address">
-  <select id="payment">
-    <option>Cash on Delivery</option>
-    <option>JazzCash</option>
-    <option>EasyPaisa</option>
-  </select>
-  <a class="btn" onclick="placeOrder()">Place Order</a>
-</section>
+  <input id="custName" placeholder="Your Name">
+  <input id="custPhone" placeholder="Phone Number">
+  <input id="custAddress" placeholder="Delivery Address">  <select id="paymentMethod">
+    <option value="Cash on Delivery">Cash on Delivery</option>
+    <option value="JazzCash">JazzCash</option>
+    <option value="EasyPaisa">EasyPaisa</option>
+  </select><a class="btn" onclick="placeOrder()">✅ Place Order</a>
 
-<a class="whatsapp-float" href="https://wa.me/923287756032">📲</a>
-<footer id="contact">© 2026 Smart Fashion Services</footer>
+</section><a class="whatsapp-float" href="https://wa.me/923287756032">📲</a>
 
-<script>
-let product='',price=0;
-function buy(p,pr){
+<footer id="contact">© 2026 Smart Fashion Services</footer><script>
+let product = "";
+let price = 0;
+
+function buy(p, pr){
   product = p;
   price = pr;
+
   document.getElementById('products').style.display = 'none';
-  const checkout = document.getElementById('checkout');
-  checkout.style.display = 'block';
-  checkout.scrollIntoView({behavior:'smooth'});
+  document.getElementById('checkout').style.display = 'block';
+
+  document.getElementById('selectedProduct').innerHTML = `📦 <b>${product}</b><br>💰 ${price} PKR`;
+  window.scrollTo(0,0);
 }
 
 function backToProducts(){
   document.getElementById('checkout').style.display = 'none';
   document.getElementById('products').style.display = 'grid';
-  document.getElementById('products').scrollIntoView({behavior:'smooth'});
-} 
-function backToProducts(){
-  document.getElementById('checkout').style.display='none';
-  document.getElementById('products').style.display='grid';
-  window.scrollTo(0,0);
 }
 
 function placeOrder(){
-  let msg=`🛒 *NEW ORDER RECEIVED* 🛒%0A%0A📦 *Product:* ${product}%0A💰 *Price:* ${price} PKR%0A%0A👤 *Customer Name:* ${name.value}%0A📞 *Phone:* ${phone.value}%0A🏠 *Address:* ${address.value}%0A%0A💳 *Payment Method:* ${payment.value}%0A%0A✅ Please confirm this order.`;
-  window.open(`https://wa.me/923287756032?text=${msg}`,'_blank');
-}%0A💰 *Price:* ${price} PKR%0A%0A👤 *Customer Name:* ${name.value}%0A📞 *Phone:* ${phone.value}%0A🏠 *Address:* ${address.value}%0A%0A💳 *Payment Method:* ${payment.value}%0A%0A✅ Please confirm this order.`;
+  const name = document.getElementById('custName').value;
+  const phone = document.getElementById('custPhone').value;
+  const address = document.getElementById('custAddress').value;
+  const payment = document.getElementById('paymentMethod').value;
+
+  if(!name || !phone || !address){
+    alert('Please fill all details');
+    return;
+  }
+
+  const msg = `🛒 NEW ORDER%0A📦 Product: ${product}%0A💰 Price: ${price} PKR%0A👤 Name: ${name}%0A📞 Phone: ${phone}%0A🏠 Address: ${address}%0A💳 Payment: ${payment}`;
+
   window.open(`https://wa.me/923287756032?text=${msg}`,'_blank');
 }
-</script>
-</body></html>
+</script></body>
+  </html>
